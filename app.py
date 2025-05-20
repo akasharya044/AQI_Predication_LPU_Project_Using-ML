@@ -30,7 +30,7 @@ st.set_page_config(
 )
 
 # Define app title and description
-st.title("🌍 Air Quality Index (AQI) Prediction")
+st.title(" Air Quality Index (AQI) Prediction")
 st.markdown("""
 This application helps you predict Air Quality Index (AQI) using machine learning models.
 Upload your data, explore it, and compare the performance of Logistic Regression and XGBoost models.
