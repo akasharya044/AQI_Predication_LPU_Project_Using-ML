@@ -32,8 +32,8 @@ st.set_page_config(
 # Define app title and description
 st.title(" Air Quality Index (AQI) Prediction")
 st.markdown("""
-This application helps you predict Air Quality Index (AQI) using machine learning models.
-Upload your data, explore it, and compare the performance of Logistic Regression and XGBoost models.
+ An application that predicts Air Quality Index (AQI) using machine learning models.
+ and compare the performance of Logistic Regression and XGBoost models.
 """)
 
 # Initialize session state variables if they don't exist
@@ -66,12 +66,12 @@ if 'target' not in st.session_state:
 st.sidebar.title("Navigation")
 app_mode = st.sidebar.selectbox(
     "Choose a section",
-    ["Data Upload & Exploration", "Data Preprocessing", "Model Training & Comparison", "Predictions & Visualization"]
+    ["Data Upload or Load Sample Data", "Data Preprocessing", "Model Training & Comparison", "Predictions & Visualization"]
 )
 
 # Data Upload & Exploration section
-if app_mode == "Data Upload & Exploration":
-    st.header("Data Upload & Exploration")
+if app_mode == "Data Upload or Load Sample Data":
+    st.header("Please Upload or Load Sample Data")
     
     col1, col2 = st.columns([1, 1])
     
