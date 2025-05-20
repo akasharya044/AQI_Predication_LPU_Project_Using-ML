@@ -176,11 +176,11 @@ elif app_mode == "Data Preprocessing":
             with col1:
                 st.subheader("Train-Test Split")
                 test_size = st.slider("Test data percentage", 10, 50, 20) / 100
-                # random_state = st.number_input("Random state", 0, 100, 42)
+                random_state = st.number_input("Random state", 0, 100, 42)
             
-            # with col2:
-            #     st.subheader("Feature Scaling")
-            #     do_scaling = st.checkbox("Apply Standard Scaling", value=True)
+            with col2:
+                st.subheader("Feature Scaling")
+                do_scaling = st.checkbox("Apply Standard Scaling", value=True)
             
             if st.button("Preprocess Data"):
                 with st.spinner("Preprocessing data..."):
