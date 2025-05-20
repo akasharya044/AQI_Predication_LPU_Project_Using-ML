@@ -143,9 +143,9 @@ elif app_mode == "Data Preprocessing":
     if st.session_state.data is None:
         st.warning("Please upload or load data in the 'Data Upload & Exploration' section first.")
     else:
-        st.subheader("Select Target Variable")
+        st.subheader("Please Select Target Variable")
         target_col = st.selectbox(
-            "Select the target column for AQI prediction",
+            "Please Select the target column for AQI prediction",
             st.session_state.data.columns.tolist(),
             index=st.session_state.data.columns.tolist().index('AQI_Bucket') if 'AQI_Bucket' in st.session_state.data.columns else 0
         )
@@ -154,7 +154,7 @@ elif app_mode == "Data Preprocessing":
         all_cols = st.session_state.data.columns.tolist()
         default_features = [col for col in all_cols if col != target_col]
         selected_features = st.multiselect(
-            "Select the features to use for prediction",
+            "Select the features or parameters to use it for prediction ",
             default_features,
             default=default_features
         )
@@ -165,7 +165,7 @@ elif app_mode == "Data Preprocessing":
             st.session_state.features = selected_features
             st.session_state.target = target_col
             
-            st.subheader("Handling Missing Values")
+            st.subheader("Data Cleaning")
             missing_strategy = st.radio(
                 "Choose a strategy for handling missing values",
                 ["Drop rows with missing values", "Fill missing values with mean/mode"]
@@ -176,11 +176,11 @@ elif app_mode == "Data Preprocessing":
             with col1:
                 st.subheader("Train-Test Split")
                 test_size = st.slider("Test data percentage", 10, 50, 20) / 100
-                random_state = st.number_input("Random state", 0, 100, 42)
+                # random_state = st.number_input("Random state", 0, 100, 42)
             
-            with col2:
-                st.subheader("Feature Scaling")
-                do_scaling = st.checkbox("Apply Standard Scaling", value=True)
+            # with col2:
+            #     st.subheader("Feature Scaling")
+            #     do_scaling = st.checkbox("Apply Standard Scaling", value=True)
             
             if st.button("Preprocess Data"):
                 with st.spinner("Preprocessing data..."):
